@@ -27,3 +27,4 @@ test/site/components
 
 #jetbrains IDE
 .idea
+*.png
