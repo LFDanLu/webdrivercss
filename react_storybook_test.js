@@ -18,7 +18,7 @@ var client = require('webdriverio').remote({desiredCapabilities:{browserName: br
 var numDiffErrors = 0;
 // init WebdriverCSS
 require('./index.js').init(client,{
-  screenshotRoot: 'react3/blah/'+browser,
+  screenshotRoot: 'react_'+browser,
   // failedComparisonsRoot: 'diffs',
   misMatchTolerance: 0.01,
   screenWidth: [1200],
