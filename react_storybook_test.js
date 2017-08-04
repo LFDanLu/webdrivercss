@@ -1,20 +1,8 @@
 //Test for Accordion components
 var assert = require('assert');
-var browser = process.env.BROWSER
-var client = require('webdriverio').remote({desiredCapabilities:{browserName: browser}})
-//var client = require('webdriverio').remote({desiredCapabilities:{browserName: 'firefox'}})
-// var client = require('webdriverio').multiremote({
-//   myChromeBrowser: {
-//     desiredCapabilities: {
-//       browserName: 'chrome'
-//     }
-//   },
-//   myFirefoxBrowser: {
-//     desiredCapabilities: {
-//       browserName: 'firefox'
-//     }
-//   }
-// });
+var browser = process.env.BROWSER;
+var client = require('webdriverio').remote({desiredCapabilities:{browserName: browser}});
+
 var numDiffErrors = 0;
 // init WebdriverCSS
 require('./index.js').init(client,{
@@ -123,6 +111,8 @@ client.init()
 
 .sync()
 .pause(1000, function (result){
+  client.end()
+  //commenting out the assert because it causes the browser not to close
   assert.equal(numDiffErrors, 0, "You have "+numDiffErrors+" diff errors")
 })
 .end();
